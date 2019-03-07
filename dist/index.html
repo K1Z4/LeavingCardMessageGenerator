@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<meta name="description" content="Farewell message generator for leaving cards">
+	<meta name="viewport" content="maximum-scale=1,width=device-width,initial-scale=1,user-scalable=0">
+	<meta name="referrer" content="origin-when-cross-origin">
+	<title>Leaving Card Message Generator</title>
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        body {
+            color: #424242;
+        }
+        .btn-primary,
+        .btn-primary:visited
+        {
+            background-color: #11af05;
+            border-color: #11af05;
+        }
+        .btn-primary:hover,
+        .btn-primary:active,
+        .btn-primary:focus {
+            background-color: #095b03;
+            border-color: #095b03;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="vue" style="max-width: 500px;">
+        <p class="mt-4">
+            <h1>Leaving Card Message Generator</h1>
+        </p>
+        <p class="mt-4">
+            <input class="form-control form-control-lg" type="text" placeholder="Leaver's name (Optional)" v-model="name">
+        </p>
+        <p>
+            <button type="button" class="btn btn-primary btn-lg btn-block" v-on:click="generate">Generate</button>
+        </p>
+        <p class="bg-light p-2" v-if="output">
+            {{output}}
+        </p>
+    </div>
+
+    <script src="vue.min.js"></script>
+    <script src="messages.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
